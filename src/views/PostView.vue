@@ -123,7 +123,7 @@
 <template>
   <main class="container">
       <Header/>
-      <h1 class="post-title">{{this.title}}</h1>
+      <h1 class="post-title">{{title}}</h1>
       <ul>
             <li v-for="comment in postData" :key="comment.id">
                 <PostSingleView v-bind:data="comment" @click="onClickComment($event, comment.order_in_post)"/>

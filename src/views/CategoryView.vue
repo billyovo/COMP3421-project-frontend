@@ -60,7 +60,7 @@
       <div class="separator"></div>
         <ul>
             <li v-for="category in categoryData" :key="category.id" class="link-list">
-                <a v-bind:href="'/category/'+category.id+'/page/1'">
+                <a v-bind:href="'/COMP3421-project-frontend/#/category/'+category.id+'/page/1'">
                     {{category.name}}
                 </a>
             </li>

@@ -41,7 +41,7 @@ export default {
     <header>
         <div class="banner-container">
             <div class="message">
-                <div><a href="/category"><span>Return to Home Page</span></a> </div>
+                <div><a href="/COMP3421-project-frontend/#/category"><span>Return to Home Page</span></a> </div>
                 <span>{{user_name}}</span>
             </div>
             <div class="small-separator"></div>

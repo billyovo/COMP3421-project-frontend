@@ -77,7 +77,7 @@
       <div class="category-hint">
           <span id="hint">Current posts:</span>
           <button class="new-post">
-              <a v-bind:href="'/post/create/category/'+category">
+              <a v-bind:href="'/COMP3421-project-frontend/#/post/create/category/'+category">
                  Create a new post?
               </a>
             </button>
@@ -85,7 +85,7 @@
       
       <ul>
           <li v-for="post in postData" :key="post.postID" style="padding: 10px">
-            <a v-bind:href="'/post/'+post.postID+'/page/1'" v-on:click="setStorage(post.title)">
+            <a v-bind:href="'/COMP3421-project-frontend/#/post/'+post.postID+'/page/1'" v-on:click="setStorage(post.title)">
                 <PostPreview v-bind:data="post"/>
             </a>
           </li>
