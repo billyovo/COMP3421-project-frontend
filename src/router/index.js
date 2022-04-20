@@ -6,7 +6,7 @@ import PostView from '../views/PostView.vue';
 import CreateView from '../views/CreateView.vue';
 
 const router = createRouter({
-  history: createWebHashHistory("./"),
+  history: createWebHashHistory("/COMP3421-project-frontend/"),
   routes: [
     {
       path: '/login',

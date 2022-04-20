@@ -77,7 +77,7 @@
       <div class="category-hint">
           <span id="hint">Current posts:</span>
           <button class="new-post">
-              <a v-bind:href="'/post/create/category/'+this.category">
+              <a v-bind:href="'/post/create/category/'+category">
                  Create a new post?
               </a>
             </button>

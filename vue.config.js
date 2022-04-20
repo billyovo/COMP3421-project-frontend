@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: './',
+    publicPath: '/COMP3421-project-frontend/',
 }
