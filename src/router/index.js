@@ -1,11 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import LoginView from '../views/LoginView.vue';
 import CategoryView from '../views/CategoryView.vue';
 import PostTitleView from '../views/PostTitleView.vue';
 import PostView from '../views/PostView.vue';
+import CreateView from '../views/CreateView.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory("./"),
   routes: [
     {
       path: '/login',
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/post/:postID/page/:page',
       name: 'view post',
       component: PostView
+    },
+    {
+      path: '/post/create/category/:category',
+      name: 'create post',
+      component: CreateView
     }
   ]
 })

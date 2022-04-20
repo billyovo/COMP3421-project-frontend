@@ -23,6 +23,7 @@ export default {
         height: 50px;
         width: 90%;
         border-bottom: 1px solid rgba(0,0,0,0.1);
+
     }
     .post-list-container{
         text-align: left;

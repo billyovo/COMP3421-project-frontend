@@ -102,6 +102,7 @@
                             headers: {
                               'Content-Type': 'application/json'
                             },        
+                            credentials: 'include'
                           })
         if(!loginRes.ok){
           this.isLoginError = true;
@@ -111,6 +112,8 @@
           data = JSON.parse(data);
           localStorage.setItem("user_name",data.user_name);
           localStorage.setItem("userID",data.userID);
+          localStorage.setItem("token", data.token);
+          this.$router.push("category");
         }
       },
       register: async function(){

@@ -27,6 +27,19 @@
         display: block;
         color: black;
     }
+    .category-hint{
+        display: flex;
+        justify-content: space-between;
+    }
+    .new-post{
+        background-color: rgb(173, 219, 230);
+        border: none;
+    }
+    .new-post:hover{
+        background-color: rgba(173, 219, 230,0.4);
+        border: 1px solid grey;
+        cursor: pointer;
+    }
 </style>
 
 <script setup>
@@ -40,7 +53,7 @@
             page: this.$route.params.page,
             category: this.$route.params.categoryID,
             fetchURL: "https://comp3421-project-api.azurewebsites.net/api/category/"+this.$route.params.categoryID+"/page/"+this.$route.params.page,
-            postData: {}
+            postData: {},
         }
     },
     methods:{
@@ -48,6 +61,9 @@
             const res = await fetch(this.fetchURL);
             const data = await res.text();
             this.postData = JSON.parse(data);
+        },
+        setStorage: function(title){
+            localStorage.setItem("title", title);
         }
     },
     mounted(){
@@ -58,10 +74,18 @@
 <template>
   <main class="container">
       <Header></Header>
-      <span id="hint">Current posts:</span>
+      <div class="category-hint">
+          <span id="hint">Current posts:</span>
+          <button class="new-post">
+              <a v-bind:href="'/post/create/category/'+this.category">
+                 Create a new post?
+              </a>
+            </button>
+      </div>
+      
       <ul>
           <li v-for="post in postData" :key="post.postID" style="padding: 10px">
-            <a v-bind:href="'/post/'+post.postID+'/page/1'">
+            <a v-bind:href="'/post/'+post.postID+'/page/1'" v-on:click="setStorage(post.title)">
                 <PostPreview v-bind:data="post"/>
             </a>
           </li>
