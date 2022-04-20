@@ -1,9 +1,6 @@
 <style scoped>
-  .center{
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-  }
+  @import '../assets/base.css';
+  @import '../assets/shared.css';
 
   .container{
     height: 100%;
@@ -13,9 +10,6 @@
     background-color: rgb(240,240,240);
   }
 
-  .separator{
-    height: 100px;
-  }
 
   #fill-area{
     height: 50%;
@@ -76,9 +70,6 @@
     font-size: 12px;
   }
 
-  .small-separator{
-    height: 20px;
-  }
 </style>
 
 <script setup></script>
@@ -90,6 +81,14 @@
         password: "",
         isUserNameError: false,
         isLoginError: false
+      }
+    },
+    watch:{
+      password: function(){
+        this.isLoginError = false;
+      },
+      username: function(){
+        this.isUserNameError = false;
       }
     },
     methods:{
@@ -106,6 +105,12 @@
                           })
         if(!loginRes.ok){
           this.isLoginError = true;
+        }
+        else{
+          let data = await loginRes.text();
+          data = JSON.parse(data);
+          localStorage.setItem("user_name",data.user_name);
+          localStorage.setItem("userID",data.userID);
         }
       },
       register: async function(){
