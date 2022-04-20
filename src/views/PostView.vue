@@ -107,9 +107,9 @@
                     },
                   body: JSON.stringify({
                       content: this.replyContent,
-                      userID: localStorage.getItem("userID"),
-                      postID: this.postID,
-                      reply_to_order: this.replyNum
+                      userID: parseInt(localStorage.getItem("userID")),
+                      postID: parseInt(this.postID),
+                      reply_to_order: parseInt(this.replyNum)
                   })
               })
               

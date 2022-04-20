@@ -27,8 +27,8 @@ export default {
                     'Authorization': 'Bearer ' + localStorage.getItem("token"),
                 },
               body: JSON.stringify({
-                  userID: localStorage.getItem("userID"),
-                  replyID: replyID, 
+                  userID: parseInt(localStorage.getItem("userID")),
+                  replyID: parseInt(replyID), 
                   voteType: type
               }),        
           });

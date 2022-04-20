@@ -60,8 +60,8 @@
                     'Authorization': 'Bearer ' + localStorage.getItem("token"),
                 },
               body: JSON.stringify({
-                  userID: localStorage.getItem("userID"),
-                  category: this.category, 
+                  userID: parseInt(localStorage.getItem("userID")),
+                  category: parseInt(this.category), 
                   title: this.title,
                   content: this.content
               }),        
