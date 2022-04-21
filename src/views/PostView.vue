@@ -66,7 +66,6 @@
 <script setup>
     import Header from '../components/Header.vue';
     import PostSingleView from '../components/PostSingleView.vue';
-    import Comment from '../components/Comment.vue';
 </script>
 <script>
   export default{
