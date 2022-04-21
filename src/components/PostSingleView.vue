@@ -35,9 +35,6 @@ export default {
           if(!res.ok){
               alert("You already voted!")
           } 
-          else{
-              data.voteType += type === "like" ? 1 : -1;
-          }   
       }
   }
 }

@@ -93,6 +93,10 @@
                   this.toggleModal();
                   this.replyNum = data;
               }
+
+              if(event.target.innerHTML === 'like' || event.target.innerHTML === 'dislike'){
+                  this.getPost();
+              }
           },
           toggleModal: function(){
               this.isShown = !this.isShown;
@@ -112,6 +116,12 @@
                       reply_to_order: parseInt(this.replyNum)
                   })
               })
+              if(!res.ok){
+                  alert("An error occured!");
+              }
+              else{
+                  this.getPost();
+              }
               
           }
     },

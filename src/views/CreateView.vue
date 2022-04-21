@@ -69,6 +69,10 @@
           if(!res.ok){
               alert("An error occured");
           }
+          else{
+              alert("Successfully posted!");
+              history.go(-1);
+          }
         }
     }
   }
